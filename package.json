@@ -1,0 +1,77 @@
+{
+  "name": "uniswap-v2-core-web",
+  "description": "🎛 Web interface for UniswapV2 core contracts",
+  "version": "1.0.1",
+  "homepage": "https://uniswap.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauravsonii/V2Core.git"
+  },
+  "keywords": [
+    "uniswap",
+    "ethereum",
+    "v2",
+    "core",
+    "uniswap-v2",
+    "web",
+    "react"
+  ],
+  "files": [
+    "contracts",
+    "build",
+    "public",
+    "src"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "ethers": "^5.7.2",
+    "web-vitals": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "solc": "0.5.16",
+    "ts-node": "^8.5.4",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "pretest": "yarn compile",
+    "test:contracts": "mocha",
+    "prepublishOnly": "yarn test:contracts"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "GPL-3.0-or-later"
+}
